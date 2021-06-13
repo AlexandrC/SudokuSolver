@@ -1,4 +1,4 @@
-import game.SudokuGame;
+import game.SudokuGameSetup;
 import game.boardExample.DefinedGrid;
 
 public class Main {
@@ -6,6 +6,8 @@ public class Main {
     public static void main (String[] args){
         System.out.println("Hello world");
 
-        SudokuGame sudokuGame= new SudokuGame(DefinedGrid.GRID_TO_SOLVE_EASY);
+        SudokuGameSetup sudokuGameSetup = new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_EASY);
+
+        sudokuGameSetup.isBoardSetupOk();
     }
 }
