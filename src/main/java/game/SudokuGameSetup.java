@@ -12,10 +12,13 @@ public class SudokuGameSetup {
 
     private int [][] board;
 
+    public SudokuGameSetup(){
+
+    }
     public SudokuGameSetup(int[][]board){
         this.board=new int[DIMENSION][DIMENSION];
         copyDefinedGridToTheBoard(board);
-        isBoardSetupOk();
+        isBoardSetupOk(this.board);
         String result=toString();
         System.out.println(result);
     }
@@ -54,12 +57,12 @@ public class SudokuGameSetup {
         }
         for (int i=0;i<DIMENSION;i=i+3){
            for (int j=0;j<DIMENSION;j++){
-               isInBox(i,j);
+               isInBox(i,j,board);
            }
            }
 
     }
-    private void isInBox(int row, int col) {
+    private void isInBox(int row, int col,int [][]board) {
         HashSet<Integer> numbersInBox = new HashSet<>();
         int r = row - row % 3;
         int c = col - col % 3;
@@ -84,12 +87,14 @@ public class SudokuGameSetup {
 
     }
 
-    private void isBoardSetupOk(){
+    public boolean isBoardSetupOk(int[][] board){
         isDuplicatesIn3x3Box(board);
         for (int i=0;i<DIMENSION;i++){
             checkDuplicatesInRows(board[i],i);
             checkDuplicatesInColumn(getColumn(board,i),i);
         }
+        System.out.println("Board is valid");
+        return true;
 
     }
     @Override
