@@ -1,4 +1,4 @@
-package game.boardExample;
+package game;
 
 import game.SudokuGameSetup;
 
@@ -30,6 +30,9 @@ public class SudokuSolver {
                             }
                         }
                     }
+                    if (row==0 &&col==0){
+                        System.out.println("There are no solution");
+                    }
                     return false;
 
                 }
@@ -38,7 +41,6 @@ public class SudokuSolver {
 
             }
         }
-
         long end = System.nanoTime();
         System.out.println("Elapsed Time in nano seconds: "+ (end-start));
         return !anotherSolution(); // sudoku done
@@ -49,6 +51,7 @@ public class SudokuSolver {
         }
         return false;
     }
+
 
     private boolean anotherSolution(){
         Scanner sc = new Scanner(System.in);

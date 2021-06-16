@@ -1,5 +1,7 @@
 package game;
 
+import game.boardExample.DefinedGrid;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -13,6 +15,7 @@ public class SudokuGameSetup {
     private int [][] board;
 
     public SudokuGameSetup(){
+
 
     }
     public SudokuGameSetup(int[][]board){
@@ -97,6 +100,7 @@ public class SudokuGameSetup {
         return true;
 
     }
+
     @Override
     public String toString() {
         StringBuilder aString = new StringBuilder();
