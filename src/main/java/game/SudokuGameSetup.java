@@ -1,8 +1,13 @@
 package game;
 
+import game.boardExample.DefinedGrid;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
+/**
+ * Class to setup sudoku grid. Also used for checking if the final grid is valid
+ */
 public class SudokuGameSetup {
     public static final int DIMENSION=9;
 
@@ -14,6 +19,7 @@ public class SudokuGameSetup {
 
     public SudokuGameSetup(){
 
+
     }
     public SudokuGameSetup(int[][]board){
         this.board=new int[DIMENSION][DIMENSION];
@@ -24,7 +30,7 @@ public class SudokuGameSetup {
     }
 
     /**
-     * Method copy defined board to new board and check if the board is valid
+     * Method copy defined board to new board
      * @param boardFromUser User would take Defined grid from class DefinedGrid
      */
     private void copyDefinedGridToTheBoard(int[][]boardFromUser) {
@@ -97,6 +103,7 @@ public class SudokuGameSetup {
         return true;
 
     }
+
     @Override
     public String toString() {
         StringBuilder aString = new StringBuilder();

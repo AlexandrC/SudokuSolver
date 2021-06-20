@@ -1,17 +1,17 @@
 import game.SudokuGameSetup;
 import game.boardExample.DefinedGrid;
-import game.boardExample.SudokuSolver;
+import game.SudokuSolver;
 
 public class Main {
 
+
     public static void main (String[] args){
 
-
-        SudokuGameSetup sudokuGameSetup = new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_HARD);
+        SudokuGameSetup sudokuGameSetup = DefinedGrid.chooseGrid();
 
         SudokuSolver sudokuSolver = new SudokuSolver(sudokuGameSetup.getBoard());
         sudokuSolver.solveByBacktracking();
-
-
     }
+
+
 }

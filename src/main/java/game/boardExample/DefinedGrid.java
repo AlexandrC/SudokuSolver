@@ -1,6 +1,11 @@
 package game.boardExample;
 
+import game.SudokuGameSetup;
+
+import java.util.Scanner;
+
 public class DefinedGrid {
+
     public static final int[][] GRID_TO_SOLVE_EASY = {
             {0,1,3,8,0,0,4,0,5},
             {0,2,4,6,0,5,0,0,0},
@@ -47,5 +52,40 @@ public class DefinedGrid {
             {0,0,0,0,8,0,0,0,0},
 
     };
+
+    public static SudokuGameSetup chooseGrid(){
+        int selection;
+        Scanner input = new Scanner(System.in);
+
+        /***************************************************/
+
+        System.out.println("Choose from these choices");
+        System.out.println("-------------------------\n");
+        System.out.println("1 - Easy Sudoku");
+        System.out.println("2 - Hard Sudoku");
+        System.out.println("3 - Very Hard Sudoku");
+        System.out.println("4 - 2 choices Sudoku");
+
+
+        selection = input.nextInt();
+        switch (selection){
+            case 1:{
+                return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_EASY);
+            }
+            case 2:{
+                return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_HARD);
+            }
+            case 3:{
+               return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_Hard2);
+            }
+            case 4:{
+                return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_2_SOLUTIONS);
+            }
+            default:{
+                throw new RuntimeException("Bad choice");
+            }
+
+        }
+    }
 
 }

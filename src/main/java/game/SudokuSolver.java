@@ -1,4 +1,4 @@
-package game.boardExample;
+package game;
 
 import game.SudokuGameSetup;
 
@@ -6,6 +6,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/**
+ * Solves defined grid
+ */
 public class SudokuSolver {
     int[][] currentBoard;
     public SudokuSolver(int[][]userBoard){
@@ -30,6 +33,9 @@ public class SudokuSolver {
                             }
                         }
                     }
+                    if (row==0 &&col==0){
+                        System.out.println("There are no solution");
+                    }
                     return false;
 
                 }
@@ -38,7 +44,6 @@ public class SudokuSolver {
 
             }
         }
-
         long end = System.nanoTime();
         System.out.println("Elapsed Time in nano seconds: "+ (end-start));
         return !anotherSolution(); // sudoku done
@@ -49,6 +54,7 @@ public class SudokuSolver {
         }
         return false;
     }
+
 
     private boolean anotherSolution(){
         Scanner sc = new Scanner(System.in);
@@ -87,9 +93,10 @@ public class SudokuSolver {
     }
 
     private boolean isInBox(int row, int col, int number) {
-        // If row is 5 then row % 3 is 2 => 5-2=3. And that's the start row position in a grid of that Box
-        int r = row - row % 3;
+        // For example
+        //  If row is 5 then row % 3 is 2 => 5-2=3. And that's the start row position in a grid of that Box
         // If col is 3 then col % 3 =0 => 3-0 = 3. And that's the start col postion in a grid of that Box.
+        int r = row - row % 3;
         int c = col - col % 3;
 
         // With Start position 3 and 3 we're checking centre box in a 9x9 grid
