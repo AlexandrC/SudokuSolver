@@ -28,7 +28,7 @@ public class DefinedGrid {
             {0,6,0,4,3,0,0,0,0},
             {8,5,0,0,0,0,4,0,0},
     };
-    public static final int[][] GRID_TO_SOLVE_Hard2={
+    public static final int[][] GRID_TO_SOLVE_VERY_EASY ={
             {0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0},
@@ -63,8 +63,8 @@ public class DefinedGrid {
         System.out.println("-------------------------\n");
         System.out.println("1 - Easy Sudoku");
         System.out.println("2 - Hard Sudoku");
-        System.out.println("3 - Very Hard Sudoku");
-        System.out.println("4 - 2 choices Sudoku");
+        System.out.println("3 - Very Easy Sudoku with many solutions");
+        System.out.println("4 - 2 choices Sudoku\n");
 
 
         selection = input.nextInt();
@@ -76,7 +76,7 @@ public class DefinedGrid {
                 return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_HARD);
             }
             case 3:{
-               return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_Hard2);
+               return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_VERY_EASY);
             }
             case 4:{
                 return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_2_SOLUTIONS);
