@@ -46,6 +46,8 @@ public class SudokuSolver {
         }
         long end = System.nanoTime();
         System.out.println("Elapsed Time in nano seconds: "+ (end-start));
+        start=0;
+        end=0;
         return !anotherSolution(); // sudoku done
     }
     private boolean isTheSpaceEmpty(int row, int column){
@@ -65,6 +67,7 @@ public class SudokuSolver {
         System.out.println("Do you want another solution: write y\n");
         System.out.println("For end of program write any keys except y\n");
         String s=sc.nextLine();
+
         return s.equals("y");
 
     }
