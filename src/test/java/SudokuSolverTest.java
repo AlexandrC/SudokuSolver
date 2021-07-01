@@ -1,9 +1,7 @@
-import game.SudokuSolver;
+import game.solver.SudokuSolver;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Scanner;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 

@@ -1,6 +1,6 @@
 import game.SudokuGameSetup;
 import game.boardExample.DefinedGrid;
-import game.SudokuSolver;
+import game.solver.SudokuSolver;
 
 public class Main {
 
