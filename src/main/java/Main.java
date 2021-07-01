@@ -11,6 +11,7 @@ public class Main {
 
         SudokuSolver sudokuSolver = new SudokuSolver(sudokuGameSetup.getBoard());
         sudokuSolver.solveByBacktracking();
+        System.out.println(sudokuSolver.toString());
     }
 
 

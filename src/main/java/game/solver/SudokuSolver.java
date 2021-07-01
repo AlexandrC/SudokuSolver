@@ -35,33 +35,27 @@ public class SudokuSolver  extends SudokuRules {
                         System.out.println("There are no solution");
                     }
                     return false;
-
                 }
-
-
-
             }
         }
         long end = System.nanoTime();
         System.out.println("Elapsed Time in nano seconds: "+ (end-start));
-        start=0;
-        end=0;
-        return !anotherSolution(); // sudoku done
+        return true; // sudoku done
     }
 
 
-    private boolean anotherSolution(){
-        Scanner sc = new Scanner(System.in);
-
-
-        System.out.println("There are the solution\n"+ toString());
-        System.out.println("Do you want another solution: write y\n");
-        System.out.println("For end of program write any keys except y\n");
-        String s=sc.nextLine();
-
-        return s.equals("y");
-
-    }
+//    public boolean anotherSolution(){
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("There are the solution\n"+ toString());
+//        System.out.println("Do you want another solution: write y\n");
+//
+//        System.out.println("For end of program write any keys except y\n");
+//        String s=sc.nextLine();
+//
+//        return s.equals("y");
+//
+//    }
     @Override
     public String toString() {
         StringBuilder aString = new StringBuilder();
