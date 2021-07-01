@@ -22,10 +22,10 @@ class SudokuGameSetupTest {
     @Test
     void itShouldcheckTheBoardSetupIsOkay() {
         //Given
-        int[][] expectedGrid= DefinedGrid.GRID_TO_SOLVE_EASY;
+
         //When
-        underTest=new SudokuGameSetup();
-        boolean boardSetupOk=underTest.isBoardSetupOk(expectedGrid);
+        underTest=new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_EASY);
+        boolean boardSetupOk=underTest.isBoardSetupOk(underTest.getBoard());
         //Then
         assertTrue(boardSetupOk);
     }

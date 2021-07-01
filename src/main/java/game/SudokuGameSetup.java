@@ -8,7 +8,7 @@ import java.util.HashSet;
 /**
  * Class to setup sudoku grid. Also used for checking if the final grid is valid
  */
-public class SudokuGameSetup {
+public class SudokuGameSetup extends DefinedGrid {
     public static final int DIMENSION=9;
 
     public int[][] getBoard() {
@@ -19,6 +19,11 @@ public class SudokuGameSetup {
 
     public SudokuGameSetup(){
 
+        this.board=chooseGrid();
+        copyDefinedGridToTheBoard(board);
+        isBoardSetupOk(this.board);
+        String result=toString();
+        System.out.println(result);
 
     }
     public SudokuGameSetup(int[][]board){

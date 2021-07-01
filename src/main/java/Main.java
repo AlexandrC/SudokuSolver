@@ -7,8 +7,7 @@ public class Main {
 
     public static void main (String[] args){
 
-        SudokuGameSetup sudokuGameSetup = DefinedGrid.chooseGrid();
-
+        SudokuGameSetup sudokuGameSetup = new SudokuGameSetup();
         SudokuSolver sudokuSolver = new SudokuSolver(sudokuGameSetup.getBoard());
         sudokuSolver.solveByBacktracking();
         System.out.println(sudokuSolver.toString());

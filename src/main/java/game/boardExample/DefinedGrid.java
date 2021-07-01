@@ -4,7 +4,23 @@ import game.SudokuGameSetup;
 
 import java.util.Scanner;
 
-public class DefinedGrid {
+public abstract class DefinedGrid {
+
+    public int[][] getGRID_TO_SOLVE_EASY() {
+        return GRID_TO_SOLVE_EASY;
+    }
+
+    public int[][] getGRID_TO_SOLVE_HARD() {
+        return GRID_TO_SOLVE_HARD;
+    }
+
+    public int[][] getGRID_TO_SOLVE_VERY_EASY() {
+        return GRID_TO_SOLVE_VERY_EASY;
+    }
+
+    public int[][] getGRID_TO_SOLVE_2_SOLUTIONS() {
+        return GRID_TO_SOLVE_2_SOLUTIONS;
+    }
 
     public static final int[][] GRID_TO_SOLVE_EASY = {
             {0,1,3,8,0,0,4,0,5},
@@ -53,7 +69,7 @@ public class DefinedGrid {
 
     };
 
-    public static SudokuGameSetup chooseGrid(){
+    protected int[][] chooseGrid(){
         int selection;
         Scanner input = new Scanner(System.in);
 
@@ -70,16 +86,16 @@ public class DefinedGrid {
         selection = input.nextInt();
         switch (selection){
             case 1:{
-                return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_EASY);
+                return GRID_TO_SOLVE_EASY;
             }
             case 2:{
-                return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_HARD);
+                return GRID_TO_SOLVE_HARD;
             }
             case 3:{
-               return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_VERY_EASY);
+               return GRID_TO_SOLVE_VERY_EASY;
             }
             case 4:{
-                return new SudokuGameSetup(DefinedGrid.GRID_TO_SOLVE_2_SOLUTIONS);
+                return GRID_TO_SOLVE_2_SOLUTIONS;
             }
             default:{
                 throw new RuntimeException("Bad choice");
