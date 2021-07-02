@@ -33,31 +33,5 @@ public class SudokuSolverTest {
         assertThat(underTest.solveByBacktracking()).isTrue();
     }
 
-    @Test
-    void itShouldNotFindSolution() {
-        //Given
 
-        final int[][] EXPECTED_USER_GRID={
-                {0,0,2,0,0,0,0,4,1},
-                {0,0,0,0,8,2,0,7,0},
-                {0,0,0,0,4,0,0,0,9},
-                {2,0,0,0,7,9,3,0,0},
-                {0,1,0,0,0,0,0,8,0},
-                {0,0,6,8,1,0,0,0,4},
-                {1,0,0,0,9,0,0,0,0},
-                {0,6,0,4,3,0,0,0,0},
-                {8,5,0,0,0,0,4,0,0},
-        };
-        String input="y";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-
-        //When
-        underTest= new SudokuSolver(EXPECTED_USER_GRID);
-
-
-        //Then
-        assertThat(underTest.solveByBacktracking()).isFalse();
-
-    }
 }

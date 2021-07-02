@@ -4,23 +4,7 @@ import game.SudokuGameSetup;
 
 import java.util.Scanner;
 
-public abstract class DefinedGrid {
-
-    public int[][] getGRID_TO_SOLVE_EASY() {
-        return GRID_TO_SOLVE_EASY;
-    }
-
-    public int[][] getGRID_TO_SOLVE_HARD() {
-        return GRID_TO_SOLVE_HARD;
-    }
-
-    public int[][] getGRID_TO_SOLVE_VERY_EASY() {
-        return GRID_TO_SOLVE_VERY_EASY;
-    }
-
-    public int[][] getGRID_TO_SOLVE_2_SOLUTIONS() {
-        return GRID_TO_SOLVE_2_SOLUTIONS;
-    }
+public abstract class DefineSudokuBoard {
 
     public static final int[][] GRID_TO_SOLVE_EASY = {
             {0,1,3,8,0,0,4,0,5},
@@ -56,7 +40,8 @@ public abstract class DefinedGrid {
             {0,0,0,0,0,0,0,0,0},
 
     };
-    public static final int[][] GRID_TO_SOLVE_2_SOLUTIONS={
+    public static
+    final int[][] GRID_TO_SOLVE_2_SOLUTIONS={
             {5,3,0,0,7,0,0,0,0},
             {6,0,0,1,9,5,0,0,0},
             {0,9,8,0,0,0,0,6,0},
@@ -69,7 +54,7 @@ public abstract class DefinedGrid {
 
     };
 
-    protected int[][] chooseGrid(){
+    public static int[][] chooseSudokuBoard(){
         int selection;
         Scanner input = new Scanner(System.in);
 
@@ -79,8 +64,8 @@ public abstract class DefinedGrid {
         System.out.println("-------------------------\n");
         System.out.println("1 - Easy Sudoku");
         System.out.println("2 - Hard Sudoku");
-        System.out.println("3 - Very Easy Sudoku with many solutions");
-        System.out.println("4 - 2 choices Sudoku\n");
+//        System.out.println("3 - Very Easy Sudoku with many solutions");
+//        System.out.println("4 - 2 choices Sudoku\n");
 
 
         selection = input.nextInt();
@@ -91,12 +76,12 @@ public abstract class DefinedGrid {
             case 2:{
                 return GRID_TO_SOLVE_HARD;
             }
-            case 3:{
-               return GRID_TO_SOLVE_VERY_EASY;
-            }
-            case 4:{
-                return GRID_TO_SOLVE_2_SOLUTIONS;
-            }
+//            case 3:{
+//               return GRID_TO_SOLVE_VERY_EASY;
+//            }
+//            case 4:{
+//                return GRID_TO_SOLVE_2_SOLUTIONS;
+//            }
             default:{
                 throw new RuntimeException("Bad choice");
             }

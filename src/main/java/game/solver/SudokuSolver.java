@@ -58,6 +58,7 @@ public class SudokuSolver  extends SudokuRules {
 //    }
     @Override
     public String toString() {
+        System.out.println("Here is the solution");
         StringBuilder aString = new StringBuilder();
         for(int row = 0; row < currentBoard.length; row++) {
             for(int col = 0; col < currentBoard.length; col++) {

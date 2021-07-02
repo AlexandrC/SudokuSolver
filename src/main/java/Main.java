@@ -1,5 +1,5 @@
 import game.SudokuGameSetup;
-import game.boardExample.DefinedGrid;
+import game.boardExample.DefineSudokuBoard;
 import game.solver.SudokuSolver;
 
 public class Main {
@@ -7,7 +7,8 @@ public class Main {
 
     public static void main (String[] args){
 
-        SudokuGameSetup sudokuGameSetup = new SudokuGameSetup();
+        int[][] userBoard= DefineSudokuBoard.chooseSudokuBoard();
+        SudokuGameSetup sudokuGameSetup = new SudokuGameSetup(userBoard);
         SudokuSolver sudokuSolver = new SudokuSolver(sudokuGameSetup.getBoard());
         sudokuSolver.solveByBacktracking();
         System.out.println(sudokuSolver.toString());
