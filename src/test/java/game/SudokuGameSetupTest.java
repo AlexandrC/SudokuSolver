@@ -1,6 +1,6 @@
 package game;
 
-import game.boardExample.DefinedGrid;
+import game.boardExample.DefineSudokuBoard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,10 +22,10 @@ class SudokuGameSetupTest {
     @Test
     void itShouldcheckTheBoardSetupIsOkay() {
         //Given
-        int[][] expectedGrid= DefinedGrid.GRID_TO_SOLVE_EASY;
+
         //When
-        underTest=new SudokuGameSetup();
-        boolean boardSetupOk=underTest.isBoardSetupOk(expectedGrid);
+        underTest=new SudokuGameSetup(DefineSudokuBoard.GRID_TO_SOLVE_EASY);
+        boolean boardSetupOk=underTest.isBoardSetupOk(underTest.getBoard());
         //Then
         assertTrue(boardSetupOk);
     }
@@ -48,10 +48,8 @@ class SudokuGameSetupTest {
 
         //When
 
-        underTest = new SudokuGameSetup();
-
         //Then
-        assertThatThrownBy(()->underTest.isBoardSetupOk(DUPLICATE_IN_ROW_GRID))
+        assertThatThrownBy(()->underTest = new SudokuGameSetup(DUPLICATE_IN_ROW_GRID))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessage("There are duplicate num 4 in column: 0");
 
