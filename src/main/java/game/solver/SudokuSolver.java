@@ -14,7 +14,6 @@ public class SudokuSolver  extends SudokuRules {
     }
 
     public boolean solveByBacktracking(){
-        long start = System.nanoTime();
         for (int row=0;row<currentBoard.length;row++){
             for (int col=0;col<currentBoard.length;col++){
 
@@ -38,8 +37,7 @@ public class SudokuSolver  extends SudokuRules {
                 }
             }
         }
-        long end = System.nanoTime();
-        System.out.println("Elapsed Time in nano seconds: "+ (end-start));
+
         return true; // sudoku done
     }
 
